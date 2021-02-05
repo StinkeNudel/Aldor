@@ -33,7 +33,7 @@ public class Game {
      * Constructor
      */
     public Game() {
-        title = "Mokri";
+        title = "Aldor";
         width = 1280;
         height = 720;
         init();
