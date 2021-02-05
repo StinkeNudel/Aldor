@@ -1,133 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="SpaceFight2:jar" />
-    </artifacts-to-build>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e792633c-655f-4b4f-9917-b07a7ab667f8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/SpaceFight2_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/textures/defeatScreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/textures/winScreen.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/display/Score.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/DefeatWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/DefeatWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/GameWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/GameWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/MenuWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/MenuWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/VictoryWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpaceFight2/Worlds/VictoryWorld.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpaceFight2/entities/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpaceFight2/entities/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SpaceFight2/entities/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SpaceFight2/entities/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Worlds/DefeatWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Worlds/DefeatWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Worlds/GameWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Worlds/GameWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Worlds/MenuWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Worlds/MenuWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Worlds/VictoryWorld.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Worlds/VictoryWorld.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entities/Player.java" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="289c9e26-cce5-4c7a-8477-8acad26a0429" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
-  <component name="ProjectId" id="1Q9Bsy51uleg5tjDjzvYkixa8N8" />
+  <component name="ProjectId" id="1o4d6fNkQz14eIXsvTnIzjxicKL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
-    <property name="project.structure.last.edited" value="Artifacts" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Workspace\SpaceFight2\res\textures" />
-      <recent name="D:\Workspace\SpaceFight2\res" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="entities" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="Worlds" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="SpaceFight2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e792633c-655f-4b4f-9917-b07a7ab667f8" name="Default Changelist" comment="" />
-      <created>1567173141893</created>
+      <changelist id="289c9e26-cce5-4c7a-8477-8acad26a0429" name="Default Changelist" comment="" />
+      <created>1612549622698</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1567173141893</updated>
+      <updated>1612549622698</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
