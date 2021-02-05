@@ -37,7 +37,7 @@ public class Player extends Entity {
      * keyboard input
      */
     private void input() {
-        if (game.getKeyHandler().w) {
+        if (game.getKeyHandler().h) {
         }
         if (game.getKeyHandler().a) {
         }
