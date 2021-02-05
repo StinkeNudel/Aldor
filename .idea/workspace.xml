@@ -20,17 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="289c9e26-cce5-4c7a-8477-8acad26a0429" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Entity/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Entity/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Display.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/ImageLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/KeyHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Worlds/TestWorld.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Worlds/Worlds.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Entity/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Entity/Enemy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Entity/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Entity/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/META-INF/Aldor.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Main/Display.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Main/Display.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Main/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Main/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Main/ImageLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Main/ImageLoader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Main/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Main/KeyHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Worlds/TestWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Worlds/TestWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Aldor/Worlds/Worlds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Aldor/Worlds/Worlds.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -66,6 +72,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -89,23 +96,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1612549821055">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="414" y="195" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1612549821055" />
-    <state x="689" y="330" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1612549818938">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="689" y="330" key="#com.intellij.ide.util.TreeClassChooserDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1612549818938" />
-    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1612550114831">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="690" y="287" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1612550114831" />
-    <state x="740" y="295" key="FileChooserDialogImpl" timestamp="1612549773324">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="740" y="295" key="FileChooserDialogImpl/-1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1612549773324" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
