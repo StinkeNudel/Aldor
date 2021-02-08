@@ -1,6 +1,5 @@
 package Worlds;
 
-import Entity.Player;
 import Main.ImageLoader;
 import Main.MotionHandler;
 import Main.MouseHandler;
@@ -16,7 +15,6 @@ public class MenuWorld extends Worlds{
     private final BufferedImage loadWorldButtonSelected = ImageLoader.loadImage("/Menu/loadWorldButtonSelected.png");
     private final BufferedImage optionsButton = ImageLoader.loadImage("/Menu/optionsButton.png");
     private final BufferedImage optionsButtonSelected = ImageLoader.loadImage("/Menu/optionsButtonSelected.png");
-    private BufferedImage cursor = ImageLoader.loadImage("/Menu/Cursor1.png");
 
 private int buttonsX = 1000, buttonsY = 300, buttonsHeight = 96, buttonsWidth = 396, buttonsDistance = 100;
 

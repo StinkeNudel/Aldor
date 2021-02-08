@@ -44,6 +44,7 @@ public class TestWorld extends Worlds{
     public void render(Graphics g){
         player.render(g);
         text(g);
+        g.fillRect(0, 700, 2000, 1000);
     }
 
     public void text(Graphics g){
