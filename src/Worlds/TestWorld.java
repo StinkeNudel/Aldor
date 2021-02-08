@@ -1,9 +1,12 @@
 package Worlds;
 
+import Entity.Player;
+
 import java.awt.*;
 
 public class TestWorld extends Worlds {
 
+    Player player;
 
     /**
      * Constructor
@@ -12,12 +15,14 @@ public class TestWorld extends Worlds {
      */
     public TestWorld(Game game) {
         super(game);
+        player = new Player(game, 300, 300);
     }
 
     /**
      * updates the world
      */
     public void tick() {
+        player.tick();
     }
 
     /**
@@ -26,6 +31,7 @@ public class TestWorld extends Worlds {
      * @param g -> Graphics g
      */
     public void render(Graphics g) {
+        player.render(g);
     }
 
 }

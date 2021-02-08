@@ -1,5 +1,6 @@
 package Worlds;
 
+import Entity.Player;
 import Main.ImageLoader;
 import Main.MotionHandler;
 import Main.MouseHandler;
@@ -93,9 +94,6 @@ private int buttonsX = 1000, buttonsY = 300, buttonsHeight = 96, buttonsWidth = 
         buttonsY = 300;
         MouseHandler.reset();
     }
-
-
-
 }
 
 
