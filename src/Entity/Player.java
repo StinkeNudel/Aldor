@@ -14,10 +14,22 @@ public class Player extends Entity {
     private final BufferedImage playerLegFrontWalk3 = ImageLoader.loadImage("/Player/playerLegFrontWalk3.png");
     private final BufferedImage playerLegFrontWalk4 = ImageLoader.loadImage("/Player/playerLegFrontWalk4.png");
 
+    private final BufferedImage playerLegBack = ImageLoader.loadImage("/Player/playerLegBack.png");
+    private final BufferedImage playerLegBackWalk1 = ImageLoader.loadImage("/Player/playerLegBackWalk1.png");
+    private final BufferedImage playerLegBackWalk2 = ImageLoader.loadImage("/Player/playerLegBackWalk2.png");
+    private final BufferedImage playerLegBackWalk3 = ImageLoader.loadImage("/Player/playerLegBackWalk3.png");
+    private final BufferedImage playerLegBackWalk4 = ImageLoader.loadImage("/Player/playerLegBackWalk4.png");
+
     private int playerLegFrontWidth = 78, playerLegFrontHeight = 84;
 
-    int walkAnimation = 1;
-    int waitForAnimationWalk = 0;
+    int walkAnimationFront = 1;
+    int waitForAnimationWalkFront = 0;
+
+    int walkAnimationBack = 1;
+    int waitForAnimationWalkBack = 0;
+
+    boolean walkFront = false, walkBack = false, standFront = false, standBack = false;
+
     double speed = 4;
 
 
@@ -46,7 +58,13 @@ public class Player extends Entity {
      * @param g Graphics g
      */
     public void render(Graphics g) {
-        animationWalkFront(g);
+        if (walkFront) {
+            animationWalkFront(g);
+        } else if (walkBack) {
+            animationWalkBack(g);
+        } else {
+            g.drawImage(playerLegFront, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
+        }
     }
 
     /**
@@ -61,13 +79,19 @@ public class Player extends Entity {
         }
 
         if (game.getKeyHandler().w) {
+            walkBack = true;
             y = y - speed;
+        } else {
+            walkBack = false;
         }
         if (game.getKeyHandler().a) {
             x = x - speed;
         }
         if (game.getKeyHandler().s) {
+            walkFront = true;
             y = y + speed;
+        } else {
+            walkFront = false;
         }
         if (game.getKeyHandler().d) {
             x = x + speed;
@@ -77,12 +101,13 @@ public class Player extends Entity {
 
     /**
      * WalkAnimationFront
+     *
      * @param g
      */
     public void animationWalkFront(Graphics g) {
-        waitForAnimationWalk++;
+        waitForAnimationWalkFront++;
 
-        switch (walkAnimation) {
+        switch (walkAnimationFront) {
             case 1:
             case 4:
                 g.drawImage(playerLegFront, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
@@ -100,12 +125,48 @@ public class Player extends Entity {
                 g.drawImage(playerLegFrontWalk4, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
                 break;
         }
-        if (waitForAnimationWalk == 350) {
-            waitForAnimationWalk = 0;
-            walkAnimation++;
+        if (waitForAnimationWalkFront == 350) {
+            waitForAnimationWalkFront = 0;
+            walkAnimationFront++;
         }
-        if (walkAnimation > 6) {
-            walkAnimation = 1;
+        if (walkAnimationFront > 6) {
+            walkAnimationFront = 1;
+        }
+
+    }
+
+    /**
+     * WalkAnimationFront
+     *
+     * @param g
+     */
+    public void animationWalkBack(Graphics g) {
+        waitForAnimationWalkBack++;
+
+        switch (walkAnimationBack) {
+            case 1:
+            case 4:
+                g.drawImage(playerLegBack, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
+                break;
+            case 2:
+                g.drawImage(playerLegBackWalk1, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
+                break;
+            case 3:
+                g.drawImage(playerLegBackWalk2, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
+                break;
+            case 5:
+                g.drawImage(playerLegBackWalk3, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
+                break;
+            case 6:
+                g.drawImage(playerLegBackWalk4, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
+                break;
+        }
+        if (waitForAnimationWalkBack == 350) {
+            waitForAnimationWalkBack = 0;
+            walkAnimationBack++;
+        }
+        if (walkAnimationBack > 6) {
+            walkAnimationBack = 1;
         }
 
     }
