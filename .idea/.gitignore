@@ -2,6 +2,9 @@
 /shelf/
 /workspace.xml
 out
+/out/
 out/
+/out
+misc.xml
 .idea/vcs.xml
-
+.idea/misc.xml
