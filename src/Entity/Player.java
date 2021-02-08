@@ -1,6 +1,6 @@
 package Entity;
 
-import Main.Game;
+import Worlds.Game;
 
 import java.awt.*;
 
@@ -10,7 +10,7 @@ public class Player extends Entity {
     /**
      * Constructor
      *
-     * @param game Main.Main.Game Object
+     * @param game Main.Worlds.Game Object
      * @param x    -> X-Coordinate
      * @param y    -> Y-Coordinate
      */

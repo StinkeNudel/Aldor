@@ -1,13 +1,14 @@
-package Main;
+package Worlds;
 
 import Entity.Player;
-import Worlds.TestWorld;
+import Main.Display;
+import Main.KeyHandler;
 import Worlds.Worlds;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
-public class Game {
+public class Game{
 
     //General
     public int width, height; //with and height of the game
@@ -22,9 +23,6 @@ public class Game {
     private Graphics g;
     private Display display;
 
-    //Worlds.Worlds
-    public Worlds testWorld;
-
 
     //Player
     Player player;
@@ -32,10 +30,10 @@ public class Game {
     /**
      * Constructor
      */
-    public Game() {
+    public Game(){
         title = "Aldor";
-        width = 1280;
-        height = 720;
+        width = 1920;
+        height = 1080;
         init();
     }
 
@@ -45,13 +43,13 @@ public class Game {
      * JFrame
      * first World
      */
-    private void init() {
+    private void init(){
         player = new Player(this, 500, 100);
         keyHandler = new KeyHandler();
         display = new Display(title, width, height); //creates Main.Main.Display
         display.getFrame().addKeyListener(keyHandler); //adds KeyListener
-        testWorld = new TestWorld(this);
-        Worlds.setWorld(testWorld);
+        MenuWorld menuWorld = new MenuWorld(this);
+        Worlds.setWorld(menuWorld);
     }
 
     /**
@@ -59,7 +57,7 @@ public class Game {
      * frames -> fps
      * ticks -> tps
      */
-    public void run() {
+    public void run(){
         int tps = 60; //ticks per second
         double timePerTick = 1000000000 / tps;
         double delta = 0;
@@ -74,20 +72,20 @@ public class Game {
         int frames = 0;
         long fpsTpsTimer = System.currentTimeMillis();
 
-        while (running) {
+        while(running){
             //tick
             now = System.nanoTime();
             delta += (now - lastTime) / timePerTick;
             timer += now - lastTime;
             lastTime = now;
 
-            if (delta >= 1) {
+            if(delta >= 1){
                 tick();
                 ticks++;
                 delta--;
             }
 
-            if (timer >= 1000000000) {
+            if(timer >= 1000000000){
                 timer = 0;
             }
 
@@ -95,7 +93,7 @@ public class Game {
             render();
             frames++;
 
-            if (System.currentTimeMillis() - fpsTpsTimer > 1000) {
+            if(System.currentTimeMillis() - fpsTpsTimer > 1000){
                 fpsTpsTimer = System.currentTimeMillis();
                 System.out.println("FPS: " + frames + "  TPS: " + ticks);
                 frames = 0;
@@ -107,9 +105,9 @@ public class Game {
     /**
      * updates the game
      */
-    private void tick() {
+    private void tick(){
         keyHandler.tick();
-        if (Worlds.getWorld() != null) {
+        if(Worlds.getWorld() != null){
             Worlds.getWorld().tick();
         }
     }
@@ -117,9 +115,9 @@ public class Game {
     /**
      * renders the game
      */
-    private void render() {
+    private void render(){
         bs = display.getCanvas().getBufferStrategy();
-        if (bs == null) {
+        if(bs == null){
             display.getCanvas().createBufferStrategy(3);
             return;
         }
@@ -128,7 +126,7 @@ public class Game {
         g.clearRect(0, 0, width, height);
 
         //Draw Here!
-        if (Worlds.getWorld() != null) {
+        if(Worlds.getWorld() != null){
             Worlds.getWorld().render(g); //render current world
         }
         //EndDrawing
@@ -137,7 +135,7 @@ public class Game {
         g.dispose();
     }
 
-    public KeyHandler getKeyHandler() {
+    public KeyHandler getKeyHandler(){
         return keyHandler;
     }
 }

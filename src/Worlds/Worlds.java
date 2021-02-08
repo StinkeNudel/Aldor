@@ -1,7 +1,5 @@
 package Worlds;
 
-import Main.Game;
-
 import java.awt.*;
 
 public abstract class Worlds {

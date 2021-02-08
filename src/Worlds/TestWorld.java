@@ -1,7 +1,5 @@
 package Worlds;
 
-import Main.Game;
-
 import java.awt.*;
 
 public class TestWorld extends Worlds {
@@ -10,7 +8,7 @@ public class TestWorld extends Worlds {
     /**
      * Constructor
      *
-     * @param game Main.Main.Game Object
+     * @param game Main.Worlds.Game Object
      */
     public TestWorld(Game game) {
         super(game);

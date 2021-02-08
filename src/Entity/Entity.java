@@ -1,6 +1,6 @@
 package Entity;
 
-import Main.Game;
+import Worlds.Game;
 
 import java.awt.*;
 
@@ -8,12 +8,12 @@ public abstract class Entity {
 
     public double x, y; // Coordinates
     public int width, height; //width and height of the Entity.Entity
-    protected Game game; //Main.Main.Game Object
+    protected Game game; //Main.Worlds.Game Object
 
     /**
      * Constructor
      *
-     * @param game Main.Main.Game Object
+     * @param game Main.Worlds.Game Object
      * @param x    X-Coordinate
      * @param y    Y-Coordinate
      */
