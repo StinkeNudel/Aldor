@@ -2,6 +2,9 @@ package Main;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 
 public class Display {
 
@@ -45,6 +48,9 @@ public class Display {
 
         frame.add(canvas);
         frame.pack();
+
+        canvas.addMouseMotionListener(new MotionHandler());
+        canvas.addMouseListener(new MouseHandler());
     }
 
     /**

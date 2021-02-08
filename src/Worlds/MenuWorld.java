@@ -1,6 +1,8 @@
 package Worlds;
 
 import Main.ImageLoader;
+import Main.MotionHandler;
+import Main.MouseHandler;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -15,6 +17,7 @@ public class MenuWorld extends Worlds{
     private final BufferedImage optionsButtonSelected = ImageLoader.loadImage("/Menu/optionsButtonSelected.png");
     private BufferedImage cursor = ImageLoader.loadImage("/Menu/Cursor1.png");
 
+private int buttonsX = 1000, buttonsY = 300, buttonsHeight = 96, buttonsWidth = 396, buttonsDistance = 100;
 
     /**
      * Constructor
@@ -41,69 +44,58 @@ public class MenuWorld extends Worlds{
 
 
     private void renderMenu(Graphics g){
-        g.drawImage(newWorldButton, 100, 100, 396, 92, null);
+        if(MotionHandler.getMouseX() > buttonsX && MotionHandler.getMouseX() < buttonsX + buttonsWidth && MotionHandler.getMouseY() > buttonsY && MotionHandler.getMouseY() < buttonsY + buttonsHeight){
+            g.drawImage(newWorldButtonSelected, buttonsX, buttonsY, buttonsWidth, buttonsHeight, null);
+        }else{
+            g.drawImage(newWorldButton, buttonsX, buttonsY, buttonsWidth, buttonsHeight, null);
+        }
+        buttonsY = buttonsY + buttonsDistance;
+
+        if(MotionHandler.getMouseX() > buttonsX && MotionHandler.getMouseX() < buttonsX + buttonsWidth && MotionHandler.getMouseY() > buttonsY && MotionHandler.getMouseY() < buttonsY + buttonsHeight){
+            g.drawImage(loadWorldButtonSelected, buttonsX, buttonsY, buttonsWidth, buttonsHeight, null);
+        }else{
+            g.drawImage(loadWorldButton, buttonsX, buttonsY, buttonsWidth, buttonsHeight, null);
+        }
+        buttonsY = buttonsY + buttonsDistance;
+
+        if(MotionHandler.getMouseX() > buttonsX && MotionHandler.getMouseX() < buttonsX + buttonsWidth && MotionHandler.getMouseY() > buttonsY && MotionHandler.getMouseY() < buttonsY + buttonsHeight){
+            g.drawImage(optionsButtonSelected, buttonsX, buttonsY, buttonsWidth, buttonsHeight, null);
+        }else{
+            g.drawImage(optionsButton, buttonsX, buttonsY, buttonsWidth, buttonsHeight, null);
+        }
+
+        buttonsY = 300;
     }
 
     /**
      * KeyInput
      */
     public void input(){
+        mouseInput();
+    }
 
+    public void mouseInput(){
+        if(MouseHandler.getClickX() > buttonsX && MouseHandler.getClickX() < buttonsX + buttonsWidth &&
+                MouseHandler.getClickY() > buttonsY && MouseHandler.getClickY() < buttonsY + buttonsHeight){
+            System.out.println("NewWorld");
+        }
+        buttonsY = buttonsY + buttonsDistance;
+        if(MouseHandler.getClickX() > buttonsX && MouseHandler.getClickX() < buttonsX + buttonsWidth &&
+                MouseHandler.getClickY() > buttonsY && MouseHandler.getClickY() < buttonsY + buttonsHeight){
+            System.out.println("LoadGame");
+        }
+        buttonsY = buttonsY + buttonsDistance;
+        if(MouseHandler.getClickX() > buttonsX && MouseHandler.getClickX() < buttonsX + buttonsWidth &&
+                MouseHandler.getClickY() > buttonsY && MouseHandler.getClickY() < buttonsY + buttonsHeight){
+            TestWorld testWorld = new TestWorld(game);
+            Worlds.setWorld(testWorld);
+        }
+        buttonsY = 300;
+        MouseHandler.reset();
     }
 
 
-/**
- public void cursorAnimation(Graphics g) {
- switch (cursorAnimation) {
- case 0:
- cursor = ImageLoader.loadImage("/Menu/Cursor1.png");
- g.drawImage(cursor, 19 * Game.blockSize, (int) (3.5 * Game.blockSize) + menuPosition * (int) (2.3 * Game.blockSize), (int) (Game.blockSize * 1.3), (int) (Game.blockSize / 1.2), null);
- if (cursorAnimationCounter >= 5) {
- cursorAnimation++;
- }
- break;
- case 1:
- cursor = ImageLoader.loadImage("/Menu/Cursor2.png");
- g.drawImage(cursor, 19 * Game.blockSize, (int) (3.5 * Game.blockSize) + menuPosition * (int) (2.3 * Game.blockSize), (int) (Game.blockSize * 1.3), (int) (Game.blockSize / 1.2), null);
- if (cursorAnimationCounter >= 5) {
- cursorAnimation++;
- }
- break;
- case 2:
- case 6:
- cursor = ImageLoader.loadImage("/Menu/Cursor3.png");
- g.drawImage(cursor, 19 * Game.blockSize, (int) (3.5 * Game.blockSize) + menuPosition * (int) (2.3 * Game.blockSize), (int) (Game.blockSize * 1.3), (int) (Game.blockSize / 1.2), null);
- if (cursorAnimationCounter >= 5) {
- cursorAnimation++;
- }
- break;
- case 3:
- case 5:
- cursor = ImageLoader.loadImage("/Menu/Cursor4.png");
- g.drawImage(cursor, 19 * Game.blockSize, (int) (3.5 * Game.blockSize) + menuPosition * (int) (2.3 * Game.blockSize), (int) (Game.blockSize * 1.3), (int) (Game.blockSize / 1.2), null);
- if (cursorAnimationCounter >= 5) {
- cursorAnimation++;
- }
- break;
- case 4:
- cursor = ImageLoader.loadImage("/Menu/Cursor5.png");
- g.drawImage(cursor, 19 * Game.blockSize, (int) (3.5 * Game.blockSize) + menuPosition * (int) (2.3 * Game.blockSize), (int) (Game.blockSize * 1.3), (int) (Game.blockSize / 1.2), null);
- if (cursorAnimationCounter >= 5) {
- cursorAnimation++;
- }
- break;
- case 7:
- cursor = ImageLoader.loadImage("/Menu/Cursor2.png");
- g.drawImage(cursor, 19 * Game.blockSize, (int) (3.5 * Game.blockSize) + menuPosition * (int) (2.3 * Game.blockSize), (int) (Game.blockSize * 1.3), (int) (Game.blockSize / 1.2), null);
- if (cursorAnimationCounter >= 5) {
- cursorAnimation = 0;
- }
- break;
 
-
- }
- }
- */
 }
 
 

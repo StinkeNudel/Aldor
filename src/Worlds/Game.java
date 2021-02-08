@@ -3,6 +3,7 @@ package Worlds;
 import Entity.Player;
 import Main.Display;
 import Main.KeyHandler;
+import Main.MotionHandler;
 import Worlds.Worlds;
 
 import java.awt.*;
@@ -17,6 +18,7 @@ public class Game{
 
     //Input
     private KeyHandler keyHandler;
+    private MotionHandler motionHandler;
 
     //Graphics
     private BufferStrategy bs;
@@ -46,6 +48,7 @@ public class Game{
     private void init(){
         player = new Player(this, 500, 100);
         keyHandler = new KeyHandler();
+        motionHandler = new MotionHandler();
         display = new Display(title, width, height); //creates Main.Main.Display
         display.getFrame().addKeyListener(keyHandler); //adds KeyListener
         MenuWorld menuWorld = new MenuWorld(this);
@@ -137,5 +140,9 @@ public class Game{
 
     public KeyHandler getKeyHandler(){
         return keyHandler;
+    }
+
+    public MotionHandler getMotionHandler(){
+        return motionHandler;
     }
 }
