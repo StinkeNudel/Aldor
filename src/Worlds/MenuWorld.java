@@ -1,5 +1,6 @@
 package Worlds;
 
+import Entity.Player;
 import Main.ImageLoader;
 
 import java.awt.*;
@@ -15,12 +16,16 @@ public class MenuWorld extends Worlds{
     private final BufferedImage optionsButtonSelected = ImageLoader.loadImage("/Menu/optionsButtonSelected.png");
     private BufferedImage cursor = ImageLoader.loadImage("/Menu/Cursor1.png");
 
+    Player player;
+
 
     /**
      * Constructor
      */
     public MenuWorld(Game game){
         super(game);
+
+        player = new Player(game, 300, 300);
     }
 
     /**
@@ -29,6 +34,8 @@ public class MenuWorld extends Worlds{
     @Override
     public void tick(){
         input();
+
+        player.tick();
     }
 
     /**
@@ -37,6 +44,7 @@ public class MenuWorld extends Worlds{
     @Override
     public void render(Graphics g){
         renderMenu(g);
+        player.render(g);
     }
 
 
