@@ -1,16 +1,24 @@
 package Worlds;
 
+import Entity.Entity;
 import Entity.Player;
-import Main.KeyHandler;
+import Main.ImageLoader;
 import Main.TextPrinter;
+import Entity.Tree;
 
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class TestWorld extends Worlds{
 
     Player player;
+    Tree tree;
     int count = 0;
     boolean once = true;
+
+    private final BufferedImage dialogBackground = ImageLoader.loadImage("/UI/dialogBackground.png");
+    private final BufferedImage grassBackground = ImageLoader.loadImage("/Backgrounds/grassBackground.png");
 
     /**
      * Constructor
@@ -19,7 +27,10 @@ public class TestWorld extends Worlds{
      */
     public TestWorld(Game game){
         super(game);
-        player = new Player(game, 300, 300);
+        player = new Player(game, 1000, 300);
+        entities.add(player);
+        tree = new Tree(game, 500, 300);
+        entities.add(tree);
     }
 
     /**
@@ -27,11 +38,13 @@ public class TestWorld extends Worlds{
      */
     public void tick(){
         player.tick();
-        if(game.getKeyHandler().a && once){
+        if(game.getKeyHandler().e && once){
             count++;
+            if(count >= 3)
+                count = 0;
             TextPrinter.clearText();
             once = false;
-        }else if(!game.getKeyHandler().a){
+        } else if(!game.getKeyHandler().e){
             once = true;
         }
     }
@@ -42,17 +55,26 @@ public class TestWorld extends Worlds{
      * @param g -> Graphics g
      */
     public void render(Graphics g){
-        player.render(g);
+        g.drawImage(grassBackground, 0, 0, 2000, 2000, null);
+        entities.sort(getWorld().renderSorter);
+        ArrayList entities = Worlds.entities;
+        for (int i = 0; i < entities.size(); i++){
+            Entity e = (Entity) entities.get(i);
+            e.render(g);
+        }
         text(g);
     }
 
     public void text(Graphics g){
         switch(count){
             case 1:
-                TextPrinter.addText("Hello There", 500, 500, g);
+                System.out.println("1");
+                g.drawImage(dialogBackground, 50, 550, 1800, 450, null);
+                TextPrinter.addText("Hello There", 100, 700, g);
                 break;
             case 2:
-                TextPrinter.addText("General Kenobi", 500, 500, g);
+                g.drawImage(dialogBackground, 50, 550, 1800, 450, null);
+                TextPrinter.addText("General Kenobi", 100, 700, g);
 
         }
     }

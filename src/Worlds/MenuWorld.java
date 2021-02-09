@@ -1,13 +1,11 @@
 package Worlds;
 
-import Entity.Player;
 import Main.ImageLoader;
 import Main.MotionHandler;
 import Main.MouseHandler;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
-
 
 public class MenuWorld extends Worlds{
     private final BufferedImage newWorldButton = ImageLoader.loadImage("/Menu/newWorldButton.png");

@@ -1,11 +1,24 @@
 package Worlds;
 
+import Entity.Entity;
+
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public abstract class Worlds {
 
     protected Game game;
     private static Worlds currentWorld = null;
+    public static ArrayList<Entity> entities;
+    public Comparator<Entity> renderSorter = new Comparator<Entity>(){
+        @Override
+        public int compare(Entity a, Entity b){
+            if(a.getY() + a.getHeight() < b.getY() + b.getHeight())
+                return -1;
+            return 1;
+        }
+    };
 
     /**
      * Constructor
@@ -14,6 +27,7 @@ public abstract class Worlds {
      */
     public Worlds(Game game) {
         this.game = game;
+        entities = new ArrayList();
     }
 
     /**
