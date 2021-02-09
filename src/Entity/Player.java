@@ -23,8 +23,11 @@ public class Player extends Entity{
     private final BufferedImage playerChestFront = ImageLoader.loadImage("/Player/playerChestFront.png");
     private final BufferedImage playerChestBack = ImageLoader.loadImage("/Player/playerChestBack.png");
 
+    private final BufferedImage playerHeadFront = ImageLoader.loadImage("/Player/playerHeadFront.png");
+
     private int playerLegFrontWidth = 78, playerLegFrontHeight = 84;
     private int playerChestFrontWidth = 56 * 3, playerChestFrontHeight = 45 * 3;
+    private double playerHeadFrontWidth = 64 * 1.5, playerHeadFrontHeight = 64 * 1.5;
 
     int walkAnimationFront = 1;
     int waitForAnimationWalkFront = 0;
@@ -72,6 +75,8 @@ public class Player extends Entity{
         } else{
             standAnimation(g);
         }
+
+        g.drawImage(playerHeadFront, (int)x - 10, (int)y - 200, (int)playerHeadFrontWidth, (int)playerHeadFrontHeight, null);
     }
 
     /**
@@ -168,7 +173,7 @@ public class Player extends Entity{
     }
 
     /**
-     * WalkAnimationFront
+     * WalkAnimationBack
      *
      * @param g
      */
