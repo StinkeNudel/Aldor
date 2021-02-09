@@ -7,7 +7,6 @@ import Main.MouseHandler;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-
 public class MenuWorld extends Worlds{
     private final BufferedImage newWorldButton = ImageLoader.loadImage("/Menu/newWorldButton.png");
     private final BufferedImage loadWorldButton = ImageLoader.loadImage("/Menu/loadWorldButton.png");

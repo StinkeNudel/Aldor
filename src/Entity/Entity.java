@@ -4,7 +4,7 @@ import Worlds.Game;
 
 import java.awt.*;
 
-public abstract class Entity {
+public abstract class Entity{
 
     public double x, y; // Coordinates
     public int width, height; //width and height of the Entity.Entity
@@ -17,7 +17,7 @@ public abstract class Entity {
      * @param x    X-Coordinate
      * @param y    Y-Coordinate
      */
-    public Entity(Game game, double x, double y) {
+    public Entity(Game game, double x, double y){
         this.x = x;
         this.y = y;
         this.game = game;
@@ -38,21 +38,29 @@ public abstract class Entity {
     /**
      * returns a Rectangle that has the size of the Entity.Entity
      */
-    public Rectangle getBounds() {
+    public Rectangle getBounds(){
         return new Rectangle((int) x, (int) y, width, height);
     }
 
     /**
      * @return x-Coordinate
      */
-    public double getX() {
+    public double getX(){
         return x;
     }
 
     /**
      * @return Y-Coordinate
      */
-    public double getY() {
+    public double getY(){
         return y;
+    }
+
+    public int getWidth(){
+        return width;
+    }
+
+    public int getHeight(){
+        return height;
     }
 }

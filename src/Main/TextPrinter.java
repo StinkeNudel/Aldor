@@ -22,7 +22,7 @@ public class TextPrinter{
             textDelay = 0;
         }
 
-        g.setFont(new Font("Monospaced", Font.BOLD, 25));
+        g.setFont(new Font("Monospaced", Font.BOLD, 50));
         g.setColor(Color.black);
         g.drawString(output, x, y);
     }
