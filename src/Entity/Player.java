@@ -27,7 +27,7 @@ public class Player extends Entity{
 
     private int playerLegFrontWidth = 78, playerLegFrontHeight = 84;
     private int playerChestFrontWidth = 56 * 3, playerChestFrontHeight = 45 * 3;
-    private double playerHeadFrontWidth = 64 * 1.5, playerHeadFrontHeight = 64 * 1.5;
+    private int playerHeadFrontWidth = 50 * 2, playerHeadFrontHeight = 50 * 2;
 
     int walkAnimationFront = 1;
     int waitForAnimationWalkFront = 0;
@@ -76,7 +76,7 @@ public class Player extends Entity{
             standAnimation(g);
         }
 
-        g.drawImage(playerHeadFront, (int)x - 10, (int)y - 200, (int)playerHeadFrontWidth, (int)playerHeadFrontHeight, null);
+        g.drawImage(playerHeadFront, (int)x - 10, (int)y - 200, playerHeadFrontWidth, playerHeadFrontHeight, null);
     }
 
     /**
