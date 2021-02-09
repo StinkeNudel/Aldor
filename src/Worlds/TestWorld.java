@@ -2,6 +2,7 @@ package Worlds;
 
 import Entity.Entity;
 import Entity.Player;
+import Entity.Rock;
 import Main.ImageLoader;
 import Main.TextPrinter;
 import Entity.Tree;
@@ -14,6 +15,7 @@ public class TestWorld extends Worlds{
 
     Player player;
     Tree tree;
+    Rock rock;
     int count = 0;
     boolean once = true;
 
@@ -27,9 +29,11 @@ public class TestWorld extends Worlds{
      */
     public TestWorld(Game game){
         super(game);
+        rock = new Rock(game,800, 300);
+        entities.add(rock);
         player = new Player(game, 1000, 300);
         entities.add(player);
-        tree = new Tree(game, 500, 300);
+        tree = new Tree(game, 300, 300);
         entities.add(tree);
     }
 
