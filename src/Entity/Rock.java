@@ -6,9 +6,9 @@ import Worlds.Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Tree extends Entity{
+public class Rock extends Entity{
 
-    private final BufferedImage tree = ImageLoader.loadImage("/Environment/tree.png");
+    private final BufferedImage rock = ImageLoader.loadImage("/Environment/rock.png");
 
     /**
      * Constructor
@@ -17,10 +17,10 @@ public class Tree extends Entity{
      * @param x    X-Coordinate
      * @param y    Y-Coordinate
      */
-    public Tree(Game game, double x, double y){
+    public Rock(Game game, double x, double y){
         super(game, x, y);
-        width = 320;
-        height = 320;
+        width = 118;
+        height = 114;
     }
 
     @Override
@@ -30,6 +30,6 @@ public class Tree extends Entity{
 
     @Override
     public void render(Graphics g){
-        g.drawImage(tree, (int) x, (int) y, width, height, null);
+        g.drawImage(rock, (int) x, (int) y, width, height, null);
     }
 }
