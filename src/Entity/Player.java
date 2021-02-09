@@ -168,7 +168,7 @@ public class Player extends Entity{
     }
 
     /**
-     * WalkAnimationFront
+     * WalkAnimationBack
      *
      * @param g
      */
