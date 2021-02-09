@@ -83,4 +83,8 @@ public class TestWorld extends Worlds{
         }
     }
 
+    public Player getPlayer(){
+        return player;
+    }
+
 }
