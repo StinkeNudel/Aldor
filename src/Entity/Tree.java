@@ -19,17 +19,22 @@ public class Tree extends Entity{
      */
     public Tree(Game game, double x, double y){
         super(game, x, y);
-        width = 320;
-        height = 320;
+        width = 128 * 4;
+        height = 128 * 4;
     }
 
     @Override
     public void tick(){
-
     }
 
     @Override
     public void render(Graphics g){
         g.drawImage(tree, (int) x, (int) y, width, height, null);
+        g.drawRect((int) x + width/2 - 18, (int) (y + height - 50), 36, 50);
+    }
+
+    public Rectangle getBounds(){
+        return new Rectangle((int) x + width/2 - 18, (int) (y + height - 50), 36, 50);
     }
 }
+

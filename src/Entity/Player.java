@@ -2,9 +2,11 @@ package Entity;
 
 import Main.ImageLoader;
 import Worlds.Game;
+import Worlds.Worlds;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 
 public class Player extends Entity{
 
@@ -25,9 +27,9 @@ public class Player extends Entity{
 
     private final BufferedImage playerHeadFront = ImageLoader.loadImage("/Player/playerHeadFront.png");
 
-    private int playerLegFrontWidth = 78, playerLegFrontHeight = 84;
-    private int playerChestFrontWidth = 56 * 3, playerChestFrontHeight = 45 * 3;
-    private int playerHeadFrontWidth = 50 * 2, playerHeadFrontHeight = 50 * 2;
+    private final int playerLegFrontWidth = (int)(26 * 2), playerLegFrontHeight = (int)(28 * 2);
+    private final int playerChestFrontWidth =(int)(56 * 2), playerChestFrontHeight = (int)(45 * 2);
+    private final int playerHeadFrontWidth = (int)(50 * 1.5), playerHeadFrontHeight = (int)(50 * 1.5);
 
     int walkAnimationFront = 1;
     int waitForAnimationWalkFront = 0;
@@ -51,8 +53,8 @@ public class Player extends Entity{
      */
     public Player(Game game, double x, double y){
         super(game, x, y);
-        width = 100;
-        height = 80;
+        width = playerLegFrontWidth;
+        height = playerLegFrontHeight;
     }
 
     /**
@@ -75,8 +77,7 @@ public class Player extends Entity{
         } else{
             standAnimation(g);
         }
-
-        g.drawImage(playerHeadFront, (int)x - 10, (int)y - 200, playerHeadFrontWidth, playerHeadFrontHeight, null);
+        renderBounds(g);
     }
 
     /**
@@ -91,34 +92,93 @@ public class Player extends Entity{
         }
 
         if(game.getKeyHandler().w){
-            walkBack = true;
-            y = y - speed;
+            if(checkCollisions("up")){
+                walkBack = true;
+                y = y - speed;
+            }
         } else{
             walkBack = false;
         }
+
         if(game.getKeyHandler().a){
+            if(checkCollisions("left")){
             x = x - speed;
+            }
         }
+
         if(game.getKeyHandler().s){
-            walkFront = true;
-            y = y + speed;
+            if(checkCollisions("down")){
+                walkFront = true;
+                y = y + speed;
+            }
         } else{
             walkFront = false;
         }
+
         if(game.getKeyHandler().d){
-            x = x + speed;
+            if(checkCollisions("right")){
+                x = x + speed;
+            }
         }
         speed = 4;
+    }
+
+    public Rectangle getBounds(String dir){
+        if(dir.equals("up")){
+            return new Rectangle((int) x + 6, (int) y + 30, width - 12, 1);
+        } else if(dir.equals("down")){
+            return new Rectangle((int) x + 6, (int) y + height, width - 12, 1);
+        } else if(dir.equals("left")){
+            return new Rectangle((int) x, (int) y + 35, 1, height - 40);
+        } else if(dir.equals("right")){
+            return new Rectangle((int) x + width, (int) y + 35, 1, height - 40);
+        } else{
+            return new Rectangle((int) x, (int) y + 40, width, height - 40);
+        }
+    }
+
+    public void renderBounds(Graphics g){
+        g.setColor(Color.GREEN);
+        g.drawRect(getBounds("up").x , getBounds("up").y, getBounds("up").width, getBounds("up").height);
+        g.drawRect(getBounds("down").x, getBounds("down").y, getBounds("down").width, getBounds("down").height);
+        g.drawRect(getBounds("left").x, getBounds("left").y, getBounds("left").width, getBounds("left").height);
+        g.drawRect(getBounds("right").x, getBounds("right").y, getBounds("right").width, getBounds("right").height);
+        g.setColor(Color.RED);
+       // g.drawRect(getBounds().x, getBounds().y, getBounds().width, getBounds().height);
+    }
+
+    private boolean checkCollisions(String dir){
+        ArrayList<Entity> entities = Worlds.entities;
+        for(Object entity : entities){
+            Entity m = (Entity) entity;
+            if(!(m == this)){
+                if(dir.equals("up") && getBounds("up").intersects(m.getBounds())){
+                    return false;
+                }
+                if(dir.equals("down") && getBounds("down").intersects(m.getBounds())){
+                    return false;
+                }
+                if(dir.equals("left") && getBounds("left").intersects(m.getBounds())){
+                    return false;
+                }
+                if(dir.equals("right") && getBounds("right").intersects(m.getBounds())){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 
     public void standAnimation(Graphics g){
         g.drawImage(playerLegFront, (int) x, (int) y, playerLegFrontWidth, playerLegFrontHeight, null);
 
         if(upDownCounter < 5000){
-            g.drawImage(playerChestFront, (int) x - 45, (int) y - 105, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerChestFront, (int) x - 30, (int) y - 70, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerHeadFront, (int) x - 13, (int) y - 138, playerHeadFrontWidth, playerHeadFrontHeight, null);
             upDownCounter++;
         } else if(upDownCounter >= 5000 && upDownCounter < 6000){
-            g.drawImage(playerChestFront, (int) x - 45, (int) y - 100, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerChestFront, (int) x - 30, (int) y - 65, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerHeadFront, (int) x - 13, (int) y - 133, playerHeadFrontWidth, playerHeadFrontHeight, null);
             upDownCounter++;
         } else{
             upDownCounter = 0;
@@ -161,10 +221,12 @@ public class Player extends Entity{
         }
 
         if(upDownCounter < 3000){
-            g.drawImage(playerChestFront, (int) x - 45, (int) y - 105, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerChestFront, (int) x - 30, (int) y - 70, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerHeadFront, (int) x - 13, (int) y - 138, playerHeadFrontWidth, playerHeadFrontHeight, null);
             upDownCounter++;
         } else if(upDownCounter >= 3000 && upDownCounter < 3500){
-            g.drawImage(playerChestFront, (int) x - 45, (int) y - 100, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerChestFront, (int) x - 30, (int) y - 65, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerHeadFront, (int) x - 13, (int) y - 133, playerHeadFrontWidth, playerHeadFrontHeight, null);
             upDownCounter++;
         } else{
             upDownCounter = 0;
@@ -207,10 +269,12 @@ public class Player extends Entity{
         }
 
         if(upDownCounter < 3000){
-            g.drawImage(playerChestBack, (int) x - 45, (int) y - 105, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerChestBack, (int) x - 30, (int) y - 70, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerHeadFront, (int) x - 13, (int) y - 138, playerHeadFrontWidth, playerHeadFrontHeight, null);
             upDownCounter++;
         } else if(upDownCounter >= 3000 && upDownCounter < 3500){
-            g.drawImage(playerChestBack, (int) x - 45, (int) y - 100, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerChestBack, (int) x - 30, (int) y - 65, playerChestFrontWidth, playerChestFrontHeight, null);
+            g.drawImage(playerHeadFront, (int) x - 13, (int) y - 133, playerHeadFrontWidth, playerHeadFrontHeight, null);
             upDownCounter++;
         } else{
             upDownCounter = 0;

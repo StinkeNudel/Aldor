@@ -27,7 +27,7 @@ public class Game{
 
 
     //Player
-    Player player;
+    public Player player;
 
     /**
      * Constructor

@@ -3,6 +3,7 @@ package Worlds;
 import Entity.Entity;
 import Entity.Player;
 import Entity.Rock;
+import Entity.House;
 import Main.ImageLoader;
 import Main.TextPrinter;
 import Entity.Tree;
@@ -13,9 +14,9 @@ import java.util.ArrayList;
 
 public class TestWorld extends Worlds{
 
-    Player player;
     Tree tree;
     Rock rock;
+    House house;
     int count = 0;
     boolean once = true;
 
@@ -29,10 +30,12 @@ public class TestWorld extends Worlds{
      */
     public TestWorld(Game game){
         super(game);
-        rock = new Rock(game,800, 300);
+        house = new House(game, 1000, 100);
+        entities.add(house);
+        rock = new Rock(game, 800, 300);
         entities.add(rock);
-        player = new Player(game, 1000, 300);
-        entities.add(player);
+        game.player = new Player(game, 1000, 300);
+        entities.add(game.player);
         tree = new Tree(game, 300, 300);
         entities.add(tree);
     }
@@ -41,7 +44,7 @@ public class TestWorld extends Worlds{
      * updates the world
      */
     public void tick(){
-        player.tick();
+        game.player.tick();
         if(game.getKeyHandler().e && once){
             count++;
             if(count >= 3)
@@ -62,7 +65,7 @@ public class TestWorld extends Worlds{
         g.drawImage(grassBackground, 0, 0, 2000, 2000, null);
         entities.sort(getWorld().renderSorter);
         ArrayList entities = Worlds.entities;
-        for (int i = 0; i < entities.size(); i++){
+        for(int i = 0; i < entities.size(); i++){
             Entity e = (Entity) entities.get(i);
             e.render(g);
         }

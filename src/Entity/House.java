@@ -6,9 +6,9 @@ import Worlds.Game;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
-public class Rock extends Entity{
+public class House extends Entity{
 
-    private final BufferedImage rock = ImageLoader.loadImage("/Environment/rock.png");
+    private final BufferedImage tree = ImageLoader.loadImage("/Environment/house.png");
 
     /**
      * Constructor
@@ -17,24 +17,23 @@ public class Rock extends Entity{
      * @param x    X-Coordinate
      * @param y    Y-Coordinate
      */
-    public Rock(Game game, double x, double y){
+    public House(Game game, double x, double y){
         super(game, x, y);
-        width = 118;
-        height = 114;
+        width = 190 * 4;
+        height = 224 * 4;
     }
 
     @Override
     public void tick(){
-
     }
 
     @Override
     public void render(Graphics g){
-        g.drawImage(rock, (int) x, (int) y, width, height, null);
-        g.drawRect((int)x , (int)y , 100, 100);
+        g.drawImage(tree, (int) x, (int) y, width, height, null);
+        g.drawRect((int) x, (int) y + 350, width, height - 350);
     }
 
     public Rectangle getBounds(){
-        return new Rectangle((int)x , (int)y , 100, 100);
+        return new Rectangle((int) x, (int) y + 350, width, height - 350);
     }
 }
