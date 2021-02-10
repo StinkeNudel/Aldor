@@ -5,6 +5,7 @@ import Entity.Entity;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Comparator;
+import Entity.Player;
 
 public abstract class Worlds {
 
@@ -59,4 +60,5 @@ public abstract class Worlds {
      * @param g Graphics g
      */
     public abstract void render(Graphics g);
+
 }
