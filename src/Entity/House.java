@@ -30,7 +30,7 @@ public class House extends Entity{
     @Override
     public void render(Graphics g){
         g.drawImage(tree, (int) x, (int) y, width, height, null);
-        g.drawRect((int) x, (int) y + 350, width, height - 350);
+        //g.drawRect((int) x, (int) y + 350, width, height - 350);
     }
 
     public Rectangle getBounds(){

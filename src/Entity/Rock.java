@@ -19,8 +19,8 @@ public class Rock extends Entity{
      */
     public Rock(Game game, double x, double y){
         super(game, x, y);
-        width = 118;
-        height = 114;
+        width = 59 * 3;
+        height = 57 * 3;
     }
 
     @Override
@@ -31,10 +31,10 @@ public class Rock extends Entity{
     @Override
     public void render(Graphics g){
         g.drawImage(rock, (int) x, (int) y, width, height, null);
-        g.drawRect((int)x , (int)y , 100, 100);
+        //g.drawRect((int) x, (int) y + height/2 + 20, width, height/4);
     }
 
     public Rectangle getBounds(){
-        return new Rectangle((int)x , (int)y , 100, 100);
+        return new Rectangle((int) x, (int) y + height/2 + 20, width, height/4 + 10);
     }
 }

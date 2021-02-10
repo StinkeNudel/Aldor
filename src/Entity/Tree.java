@@ -30,11 +30,11 @@ public class Tree extends Entity{
     @Override
     public void render(Graphics g){
         g.drawImage(tree, (int) x, (int) y, width, height, null);
-        g.drawRect((int) x + width/2 - 18, (int) (y + height - 50), 36, 50);
+        //g.drawRect((int) x + width/2 - 50, (int) (y + height - 50), width/6, 50);
     }
 
     public Rectangle getBounds(){
-        return new Rectangle((int) x + width/2 - 18, (int) (y + height - 50), 36, 50);
+        return new Rectangle((int) x + width/2 - 50, (int) (y + height - 50), width/6, 50);
     }
 }
 
